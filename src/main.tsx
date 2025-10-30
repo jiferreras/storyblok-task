@@ -26,6 +26,7 @@ storyblokInit({
         feature: Feature,
         grid: Grid,
     },
+    enableFallbackComponent: true
 });
 const router = createBrowserRouter([
     {

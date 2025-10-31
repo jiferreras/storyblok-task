@@ -26,7 +26,9 @@ export default function App() {
                     slug: story.full_slug
                 })
             });
-            stories.reverse()
+            stories.sort((a, b) => {
+                return a.id - b.id;
+            });
             setArticles(stories)
         }
 

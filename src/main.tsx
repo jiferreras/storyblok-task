@@ -10,6 +10,7 @@ import Page from './storyblok/Page';
 import Teaser from './storyblok/Teaser';
 import Feature from './storyblok/Feature';
 import Grid from './storyblok/Grid';
+import TextBlock from './storyblok/TextBlock';
 
 storyblokInit({
     accessToken: import.meta.env.STORYBLOK_DELIVERY_API_TOKEN,
@@ -25,6 +26,7 @@ storyblokInit({
         teaser: Teaser,
         feature: Feature,
         grid: Grid,
+        textblock: TextBlock,
     },
     enableFallbackComponent: true
 });

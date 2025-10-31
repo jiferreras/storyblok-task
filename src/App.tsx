@@ -1,9 +1,10 @@
-import { getStoryblokApi, StoryblokComponent, useStoryblok, useStoryblokApi, useStoryblokBridge } from '@storyblok/react';
+import { getStoryblokApi, StoryblokComponent, useStoryblok, useStoryblokApi, useStoryblokBridge, useStoryblokRichText } from '@storyblok/react';
 import { useParams } from 'react-router';
 import Header from './components/Header';
 import { useEffect, useState } from 'react';
 import { ArticleLink } from './components/SidePanel';
 import { ThemeProvider } from "@/components/ThemeProvider"
+import React from 'react';
 
 export default function App() {
     const currentYear = new Date().getFullYear();

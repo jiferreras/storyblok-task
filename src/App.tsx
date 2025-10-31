@@ -1,7 +1,7 @@
 import { getStoryblokApi, StoryblokComponent, useStoryblok, useStoryblokApi, useStoryblokBridge, useStoryblokRichText } from '@storyblok/react';
 import { useParams } from 'react-router';
 import Header from './components/Header';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { ArticleLink } from './components/SidePanel';
 import { ThemeProvider } from "@/components/ThemeProvider"
 import React from 'react';
@@ -33,15 +33,14 @@ export default function App() {
         getArticles();
     }, []);
 
-    if (!story?.content) {
-        return <div>Loading...</div>;
-    }
-
     return (
         <ThemeProvider>
             <Header articles={articles} />
             <main className="container mx-auto px-4 py-6">
-                <StoryblokComponent blok={story.content} />
+                {
+                    story?.content ? <StoryblokComponent blok={story.content} />
+                        : <div>Loading...</div>
+                }
             </main>
             <footer className="border-t py-6 text-center text-sm text-muted-foreground">All rights reserved © {currentYear}</footer>
         </ThemeProvider>
